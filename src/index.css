@@ -38,3 +38,19 @@
     font-family: "Playfair Display", serif;
   }
 }
+
+@utility glass {
+  background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
+
+  backdrop-filter: blur(16px);
+
+  border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+}
+
+@utility glass-strong {
+  background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
+
+  backdrop-filter: blur(24px);
+
+  border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
+}
