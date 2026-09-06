@@ -1,5 +1,5 @@
 import { Button } from "@/components/Button";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const navLinks = [
@@ -13,8 +13,8 @@ function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 right-0 left-0 bg-transparent py-5">
-      <nav className="container mx-auto flex items-center justify-between px-6">
+    <header className="fixed top-0 right-0 left-0 z-50 bg-transparent py-5">
+      <nav className="container mx-auto flex items-center justify-between px-6 pb-4 md:pb-0">
         <a
           href="#"
           className="hover:text-primary text-xl font-bold tracking-tight"
@@ -45,15 +45,15 @@ function Navbar() {
         {/* mobile menu button */}
         <button
           onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-          className="text-foreground p-2 md:hidden"
+          className="text-foreground cursor-pointer p-2 md:hidden"
         >
-          <Menu size={24} />
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </nav>
 
       {/* mobile menu */}
       {isMobileMenuOpen && (
-        <div className="glass-strong md:hidden">
+        <div className="glass-strong animate-fade-in md:hidden">
           <div className="container mx-auto flex flex-col gap-4 px-6 py-6">
             {navLinks.map((link, index) => (
               <a
