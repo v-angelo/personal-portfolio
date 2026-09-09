@@ -24,7 +24,7 @@
   --color-surface: #1a2329;
 
   /* animations */
-  --animate-fade-in: fade-in 0.6s ease-out both;
+  --animate-fade-in: fade-in 0.8s ease-out both;
 
   @keyframes fade-in {
     from {
@@ -73,6 +73,11 @@
   border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
 }
 
+@utility glow-text {
+  text-shadow: 0 0 30px
+    color-mix(in srgb, var(--color-primary) 50%, transparent);
+}
+
 @layer utilities {
   @keyframes slow-drift {
     0%,
@@ -91,5 +96,46 @@
     75% {
       transform: translate(30px, 10px);
     }
+  }
+
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+  .animation-delay-800 {
+    animation-delay: 800ms;
+  }
+
+  @keyframes animated-border {
+    0% {
+      stroke-dashoffset: 400;
+    }
+    100% {
+      stroke-dashoffset: -550;
+    }
+  }
+
+  .group:hover .animated-border-path {
+    animation: animated-border 1.5s linear infinite;
+  }
+
+  .animated-border:hover {
+    background-color: color-mix(in srgb, #26c4b8 15%, transparent);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 0 20px color-mix(in srgb, #26c4b8 20%, transparent);
   }
 }

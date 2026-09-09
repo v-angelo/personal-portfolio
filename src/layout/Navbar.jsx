@@ -17,19 +17,19 @@ function Navbar() {
       <nav className="container mx-auto flex items-center justify-between px-6 pb-4 md:pb-0">
         <a
           href="#"
-          className="hover:text-primary text-xl font-bold tracking-tight"
+          className="text-xl font-bold tracking-tight hover:text-primary"
         >
           PM<span className="text-primary">.</span>
         </a>
 
         {/* desktop nav */}
         <div className="hidden items-center gap-1 md:flex">
-          <div className="glass items-center gap-1 rounded-full px-2 py-1">
+          <div className="items-center gap-1 rounded-full glass px-2 py-1">
             {navLinks.map((link, index) => (
               <a
                 key={index}
                 href={link.href}
-                className="text-muted-foreground hover:text-foreground hover:bg-surface rounded-full px-4 py-2 text-sm"
+                className="rounded-full px-4 py-2 text-sm text-muted-foreground hover:bg-surface hover:text-foreground"
               >
                 {link.label}
               </a>
@@ -45,7 +45,7 @@ function Navbar() {
         {/* mobile menu button */}
         <button
           onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-          className="text-foreground cursor-pointer p-2 md:hidden"
+          className="cursor-pointer p-2 text-foreground md:hidden"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -53,13 +53,13 @@ function Navbar() {
 
       {/* mobile menu */}
       {isMobileMenuOpen && (
-        <div className="glass-strong animate-fade-in md:hidden">
+        <div className="animate-fade-in glass-strong md:hidden">
           <div className="container mx-auto flex flex-col gap-4 px-6 py-6">
             {navLinks.map((link, index) => (
               <a
                 key={index}
                 href={link.href}
-                className="text-muted-foreground hover:text-foreground py-2 text-lg"
+                className="py-2 text-lg text-muted-foreground hover:text-foreground"
               >
                 {link.label}
               </a>
