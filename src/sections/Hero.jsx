@@ -1,6 +1,21 @@
 import AnimatedButton from "@/components/AnimatedButton";
 import { Button } from "@/components/Button";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, ChevronDown, Download } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+
+const skills = [
+  "React",
+  "Angular",
+  "Next.js",
+  "MongoDB",
+  "Express",
+  "Node.js",
+  "Git",
+  "GitHub",
+  "TailwindCSS",
+  "Javascript",
+  "Typescript",
+];
 
 function Hero() {
   return (
@@ -35,9 +50,9 @@ function Hero() {
 
       {/* content */}
       <div className="relative z-10 container mx-auto px-6 pt-32 pb-20">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
+        <div className="grid items-center gap-12 lg:grid-cols-3">
           {/* left - text content */}
-          <div className="space-y-8">
+          <div className="space-y-8 lg:col-span-2">
             {/* banner text */}
             <div className="animate-fade-in">
               <span className="inline-flex items-center gap-2 rounded-full glass px-4 py-2 text-sm text-primary">
@@ -60,8 +75,8 @@ function Hero() {
 
               <p className="animation-delay-200 max-w-lg animate-fade-in text-lg text-muted-foreground">
                 Hi, I'm Visal Angelo — a Full-Stack Developer focused on
-                building modern web applications that look great, perform fast,
-                and scale without getting in the way.
+                building modern web applications with clean code, thoughtful
+                design, and seamless user experiences.
               </p>
             </div>
 
@@ -76,10 +91,91 @@ function Hero() {
                 Download CV
               </AnimatedButton>
             </div>
+
+            {/* social links */}
+            <div className="animation-delay-400 flex animate-fade-in items-center gap-4">
+              <span className="text-sm text-muted-foreground">Follow me: </span>
+              {[
+                { icon: FaGithub, href: "https://github.com/v-angelo" },
+                {
+                  icon: FaLinkedin,
+                  href: "https://www.linkedin.com/in/v-angelo",
+                },
+              ].map((social, index) => (
+                <a
+                  key={index}
+                  href={social.href}
+                  target="_blank"
+                  className="rounded-full glass p-2 transition-all duration-300 hover:bg-primary/10 hover:text-primary"
+                >
+                  {<social.icon className="h-5 w-5" />}
+                </a>
+              ))}
+            </div>
           </div>
 
-          {/* right - profile image */}
+          {/* right - profile */}
+          <div className="animation-delay-300 relative animate-fade-in">
+            {/* profile image */}
+            <div className="relative mx-auto max-w-md">
+              <div className="absolute inset-0 animate-pulse rounded-3xl bg-linear-to-br from-primary/30 via-transparent to-primary/10 blur-2xl" />
+
+              <div className="relative rounded-3xl glass p-2 glow-border">
+                <img
+                  src=""
+                  alt="ProfilePic"
+                  className="aspect-4/5 w-full rounded-2xl object-cover"
+                />
+
+                {/* floating badge */}
+                <div className="absolute -right-4 -bottom-4 animate-float rounded-xl glass px-4 py-3">
+                  <div className="flex items-center gap-3">
+                    <div className="h-3 w-3 animate-pulse rounded-full bg-green-500" />
+
+                    <span className="text-sm font-medium">
+                      Available for work
+                    </span>
+                  </div>
+                </div>
+
+                {/* stats badge */}
+                <div className="animation-delay-500 absolute -top-4 -left-4 animate-float rounded-xl glass px-4 py-3">
+                  <div className="text-xl font-bold text-primary">1+</div>
+                  <div className="text-xs text-muted-foreground">Year Exp.</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
+        {/* skills section */}
+        <div className="animation-delay-600 mt-20 animate-fade-in">
+          <p className="mb-6 text-center text-sm text-muted-foreground">
+            Technologies I work with
+          </p>
+
+          <div className="relative overflow-hidden">
+            <div className="flex animate-marquee">
+              {[...skills, ...skills].map((skill, index) => (
+                <div key={index} className="shrink-0 px-8 py-4">
+                  <span className="text-xl font-semibold text-muted-foreground/50 transition-colors hover:text-muted-foreground">
+                    {skill}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="animation-delay-800 absolute bottom-4 left-1/2 z-50 -translate-x-1/2 animate-fade-in">
+        <a
+          href="#about"
+          className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary"
+        >
+          <span className="text-xs tracking-wider uppercase">Scroll</span>
+          <ChevronDown className="h-6 w-6 animate-bounce" />
+        </a>
       </div>
     </section>
   );

@@ -24,21 +24,11 @@
   --color-surface: #1a2329;
 
   /* animations */
-  --animate-fade-in: fade-in 0.8s ease-out both;
+  --animate-fade-in: fade-in 0.6s ease-out both;
 
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-      filter: blur(10px);
-    }
+  --animate-float: float 4s ease-in-out infinite;
 
-    to {
-      opacity: 1;
-      transform: translateY(0);
-      filter: blur(0);
-    }
-  }
+  --animate-marquee: marquee 30s linear infinite;
 }
 
 @layer base {
@@ -78,7 +68,27 @@
     color-mix(in srgb, var(--color-primary) 50%, transparent);
 }
 
+@utility glow-border {
+  box-shadow:
+    0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent),
+    inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent);
+}
+
 @layer utilities {
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+      filter: blur(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+
   @keyframes slow-drift {
     0%,
     100% {
@@ -95,6 +105,25 @@
 
     75% {
       transform: translate(30px, 10px);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
     }
   }
 
