@@ -73,13 +73,16 @@ function Navbar() {
               <a
                 key={index}
                 href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
                 className="py-2 text-lg text-muted-foreground hover:text-foreground"
               >
                 {link.label}
               </a>
             ))}
 
-            <Button>Contact Me</Button>
+            <Button onClick={() => setIsMobileMenuOpen(false)}>
+              Contact Me
+            </Button>
           </div>
         </div>
       )}

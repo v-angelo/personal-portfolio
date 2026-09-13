@@ -168,7 +168,7 @@ function Hero() {
         </div>
       </div>
 
-      <div className="animation-delay-800 absolute bottom-4 left-1/2 z-50 -translate-x-1/2 animate-fade-in">
+      <div className="animation-delay-800 absolute bottom-4 left-1/2 z-30 -translate-x-1/2 animate-fade-in">
         <a
           href="#about"
           className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary"
