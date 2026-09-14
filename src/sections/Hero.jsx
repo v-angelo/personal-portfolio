@@ -29,7 +29,7 @@ const socialLinks = [
 
 function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden">
+    <section className="relative flex items-center overflow-hidden max-2xl:min-h-screen">
       {/* bg */}
       <div className="absolute inset-0">
         <img

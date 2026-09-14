@@ -28,7 +28,7 @@ const highlights = [
 
 function About() {
   return (
-    <section id="about" className="relative overflow-hidden py-32">
+    <section id="about" className="relative overflow-hidden py-20">
       <div className="relative z-10 container mx-auto px-6">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           {/* left column */}
