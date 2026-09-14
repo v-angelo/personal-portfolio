@@ -13,8 +13,18 @@ const skills = [
   "Git",
   "GitHub",
   "TailwindCSS",
+  "Bootstrap",
+  "Redux",
   "Javascript",
   "Typescript",
+];
+
+const socialLinks = [
+  { icon: FaGithub, href: "https://github.com/v-angelo" },
+  {
+    icon: FaLinkedin,
+    href: "https://www.linkedin.com/in/v-angelo",
+  },
 ];
 
 function Hero() {
@@ -23,7 +33,7 @@ function Hero() {
       {/* bg */}
       <div className="absolute inset-0">
         <img
-          src="/hero-bg.jpg"
+          src="/bg/bg-cyan.jpg"
           alt="Hero Image"
           className="h-full w-full object-cover opacity-40"
         />
@@ -33,7 +43,7 @@ function Hero() {
 
       {/* dots */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {[...Array(30)].map((_, i) => (
+        {[...Array(40)].map((_, i) => (
           <div
             key={i}
             className="absolute h-1.5 w-1.5 rounded-full opacity-60"
@@ -49,7 +59,7 @@ function Hero() {
       </div>
 
       {/* content */}
-      <div className="relative z-10 container mx-auto px-6 pt-32 pb-20">
+      <div className="relative z-10 container mx-auto px-6 pt-32 pb-16">
         <div className="grid items-center gap-12 lg:grid-cols-3">
           {/* left - text content */}
           <div className="space-y-8 lg:col-span-2">
@@ -95,13 +105,7 @@ function Hero() {
             {/* social links */}
             <div className="animation-delay-400 flex animate-fade-in items-center gap-4">
               <span className="text-sm text-muted-foreground">Follow me: </span>
-              {[
-                { icon: FaGithub, href: "https://github.com/v-angelo" },
-                {
-                  icon: FaLinkedin,
-                  href: "https://www.linkedin.com/in/v-angelo",
-                },
-              ].map((social, index) => (
+              {socialLinks.map((social, index) => (
                 <a
                   key={index}
                   href={social.href}
@@ -123,7 +127,7 @@ function Hero() {
               <div className="relative rounded-3xl glass p-2 glow-border">
                 <img
                   src=""
-                  alt="ProfilePic"
+                  alt="Avatar"
                   className="aspect-4/5 w-full rounded-2xl object-cover"
                 />
 
@@ -168,7 +172,7 @@ function Hero() {
         </div>
       </div>
 
-      <div className="animation-delay-800 absolute bottom-4 left-1/2 z-30 -translate-x-1/2 animate-fade-in">
+      <div className="animation-delay-800 absolute bottom-0 left-1/2 z-30 -translate-x-1/2 animate-fade-in">
         <a
           href="#about"
           className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary"

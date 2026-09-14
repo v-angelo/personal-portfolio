@@ -28,9 +28,10 @@ function Navbar() {
     <header
       className={`fixed top-0 right-0 left-0 z-50 transition-all duration-500 ${isScrolled ? "glass-strong py-3" : "bg-transparent py-5"}`}
     >
-      <nav className="container mx-auto flex items-center justify-between px-6 pb-4 md:pb-0">
+      <nav className="container mx-auto flex items-center justify-between px-6 pb-2 md:pb-0">
         <a
           href="#"
+          onClick={() => setIsMobileMenuOpen(false)}
           className="text-xl font-bold tracking-tight hover:text-primary"
         >
           PM<span className="text-primary">.</span>
@@ -68,7 +69,7 @@ function Navbar() {
       {/* mobile menu */}
       {isMobileMenuOpen && (
         <div className="animate-fade-in glass-strong md:hidden">
-          <div className="container mx-auto flex flex-col gap-4 px-6 py-6">
+          <div className="container mx-auto flex flex-col gap-4 px-6 py-4">
             {navLinks.map((link, index) => (
               <a
                 key={index}
