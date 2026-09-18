@@ -6,7 +6,7 @@ const projects = [
   {
     title: "Nimbus Core",
     description:
-      "A Weather app built using React and Openweather API featuring around the world location search, forecasts and custom weather themes features.",
+      "A weather app built using React and Openweather API featuring around the world location search, forecasts and custom weather themes features.",
     image: "/projects/project01.jpg",
     tags: ["React", "TailwindCSS", "OpenweatherAPI"],
     link: "https://nimbus-core.vercel.app",
