@@ -26,7 +26,10 @@ const eduExp = [
 ];
 function Experience() {
   return (
-    <section id="experience" className="relative overflow-hidden py-16">
+    <section
+      id="experience"
+      className="relative scroll-m-5 overflow-hidden py-16"
+    >
       <div className="absolute top-1/2 left-1/4 h-96 w-96 -translate-y-1/2 rounded-full bg-primary/5 blur-3xl" />
 
       <div className="relative z-10 container mx-auto px-6">
@@ -76,7 +79,7 @@ function Experience() {
                   }`}
                 >
                   <div
-                    className={`rounded-2xl border border-primary/30 glass p-6 transition-all duration-500 hover:border-primary/50`}
+                    className={`rounded-2xl glass border border-primary/30 p-6 transition-all duration-500 hover:border-primary/50`}
                   >
                     <span className="text-sm font-medium text-primary">
                       {exp.period}

@@ -34,7 +34,7 @@ function Navbar() {
           onClick={() => setIsMobileMenuOpen(false)}
           className="text-xl font-bold tracking-tight hover:text-primary"
         >
-          PM<span className="text-primary">.</span>
+          VA<span className="text-primary">.</span>
         </a>
 
         {/* desktop nav */}
@@ -54,7 +54,14 @@ function Navbar() {
 
         {/* cta button */}
         <div className="hidden md:block">
-          <Button size="sm">Contact Me</Button>
+          <Button
+            onClick={() => {
+              document.getElementById("contact")?.scrollIntoView();
+            }}
+            size="sm"
+          >
+            Contact Me
+          </Button>
         </div>
 
         {/* mobile menu button */}
@@ -81,7 +88,12 @@ function Navbar() {
               </a>
             ))}
 
-            <Button onClick={() => setIsMobileMenuOpen(false)}>
+            <Button
+              onClick={() => {
+                document.getElementById("contact")?.scrollIntoView();
+                setIsMobileMenuOpen(false);
+              }}
+            >
               Contact Me
             </Button>
           </div>
