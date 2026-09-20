@@ -1,3 +1,4 @@
+import Logo from "@/components/Logo";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const socialLinks = [
@@ -25,8 +26,17 @@ function Footer() {
         <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
           {/* logo & copyright */}
           <div className="text-center md:text-left">
-            <a href="#" className="text-xl font-bold tracking-tight">
-              PM<span className="text-primary">.</span>
+            <a
+              href="#"
+              className="text-xl font-bold tracking-tight hover:text-primary"
+            >
+              <div className="flex items-center justify-start gap-2">
+                <Logo className="h-7 w-7 text-primary" />
+
+                <span>
+                  VA<span className="text-primary">.</span>
+                </span>
+              </div>
             </a>
             <p className="mt-2 text-sm text-muted-foreground">
               © {currentYear} Visal Angelo. All rights reserved.

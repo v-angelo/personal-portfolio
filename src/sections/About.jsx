@@ -42,7 +42,7 @@ function About() {
             {/* heading */}
             <h2 className="animation-delay-100 animate-fade-in text-4xl leading-tight font-bold text-secondary-foreground md:text-5xl">
               Building the future,
-              <span className="font-serif font-normal text-white italic">
+              <span className="font-serif font-normal text-foreground italic">
                 {" "}
                 one component at a time.
               </span>
@@ -54,8 +54,7 @@ function About() {
                 I'm a passionate web developer constantly learning new
                 technologies to bring out the best user experiences. My journey
                 started with a curiosity for how things work on the web, and it
-                has evolved into a deep expertise in modern frontend
-                technologies.
+                has evolved into a deep interest in modern web technologies.
               </p>
               <p>
                 I specialize in React, Angular and Next.js, building everything
@@ -71,9 +70,8 @@ function About() {
 
             <div className="animation-delay-300 animate-fade-in rounded-2xl glass p-6 glow-border">
               <p className="text-lg font-medium text-foreground italic">
-                "My mission is to create digital experiences that are not just
-                functional, but truly delightful — products that users love to
-                use and developers love to maintain."
+                “My mission is to build digital experiences that are not only
+                functional, but intuitive, delightful, and built to last.”
               </p>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import { Button } from "@/components/Button";
+import Logo from "@/components/Logo";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -34,7 +35,13 @@ function Navbar() {
           onClick={() => setIsMobileMenuOpen(false)}
           className="text-xl font-bold tracking-tight hover:text-primary"
         >
-          VA<span className="text-primary">.</span>
+          <div className="flex items-center justify-between gap-2">
+            <Logo className="h-7 w-7 text-primary" />
+
+            <span>
+              VA<span className="text-primary">.</span>
+            </span>
+          </div>
         </a>
 
         {/* desktop nav */}

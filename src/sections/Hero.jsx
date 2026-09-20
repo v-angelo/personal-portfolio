@@ -33,7 +33,7 @@ function Hero() {
       {/* bg */}
       <div className="absolute inset-0">
         <img
-          src="/bg/bg-cyan.jpg"
+          src="/images/bg/bg-teal.jpg"
           alt="Hero Image"
           className="h-full w-full object-cover opacity-40"
         />
@@ -46,9 +46,8 @@ function Hero() {
         {[...Array(40)].map((_, i) => (
           <div
             key={i}
-            className="absolute h-1.5 w-1.5 rounded-full opacity-60"
+            className="absolute h-1.5 w-1.5 rounded-full bg-secondary-foreground opacity-60"
             style={{
-              backgroundColor: "#20B2A6",
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
               animation: `slow-drift ${15 + Math.random() * 20}s ease-in-out infinite`,
@@ -78,7 +77,7 @@ function Hero() {
                 <span className="text-primary glow-text">ideas</span> into
                 powerful
                 <br />
-                <span className="font-serif font-normal text-white italic">
+                <span className="font-serif font-normal text-foreground italic">
                   web apps.
                 </span>
               </h1>
@@ -92,7 +91,12 @@ function Hero() {
 
             {/* ctas */}
             <div className="animation-delay-300 flex animate-fade-in flex-wrap gap-4">
-              <Button size="lg">
+              <Button
+                onClick={() => {
+                  document.getElementById("contact")?.scrollIntoView();
+                }}
+                size="lg"
+              >
                 Contact Me <ArrowRight className="h-5 w-5" />
               </Button>
 
@@ -126,13 +130,13 @@ function Hero() {
 
               <div className="relative rounded-3xl glass p-2 glow-border">
                 <img
-                  src=""
+                  src="/images/avatar/webDev-teal.png"
                   alt="Avatar"
                   className="aspect-4/5 w-full rounded-2xl object-cover"
                 />
 
                 {/* floating badge */}
-                <div className="absolute -right-4 -bottom-4 animate-float rounded-xl glass px-4 py-3">
+                <div className="absolute -right-5 -bottom-7 animate-float rounded-xl glass px-4 py-3">
                   <div className="flex items-center gap-3">
                     <div className="h-3 w-3 animate-pulse rounded-full bg-green-500" />
 

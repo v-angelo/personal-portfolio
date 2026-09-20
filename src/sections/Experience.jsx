@@ -1,5 +1,21 @@
 const eduExp = [
   {
+    period: "2026-present",
+    role: "Freelance Web Developer",
+    institution: "",
+    description:
+      "Working on personal and freelance projects, improving my skills and gaining more experience.",
+    technologies: [
+      "React",
+      "Angular",
+      "NextJS",
+      "MongoDB",
+      "Express",
+      "NodeJS",
+    ],
+    current: true,
+  },
+  {
     period: "2025-2026",
     role: "MEARN Stack Development Intern",
     institution: "Luminar Technolab",
@@ -13,7 +29,7 @@ const eduExp = [
       "Express",
       "NodeJS",
     ],
-    current: true,
+    current: false,
   },
   {
     period: "2012-2016",
@@ -31,6 +47,7 @@ function Experience() {
       className="relative scroll-m-5 overflow-hidden py-16"
     >
       <div className="absolute top-1/2 left-1/4 h-96 w-96 -translate-y-1/2 rounded-full bg-primary/5 blur-3xl" />
+      <div className="absolute right-1/4 bottom-1/4 h-96 w-96 rounded-full bg-highlight/5 blur-3xl" />
 
       <div className="relative z-10 container mx-auto px-6">
         {/* section header */}
@@ -40,7 +57,7 @@ function Experience() {
           </span>
           <h2 className="animation-delay-100 mt-4 mb-6 animate-fade-in text-4xl font-bold text-secondary-foreground md:text-5xl">
             Experience and{" "}
-            <span className="font-serif font-normal text-white italic">
+            <span className="font-serif font-normal text-foreground italic">
               {" "}
               Education.
             </span>
@@ -85,7 +102,7 @@ function Experience() {
                       {exp.period}
                     </span>
                     <h3 className="mt-2 text-xl font-semibold">{exp.role}</h3>
-                    <p className="text-muted-foreground">{exp.company}</p>
+                    <p className="text-muted-foreground">{exp.institution}</p>
                     <p className="mt-4 text-sm text-muted-foreground">
                       {exp.description}
                     </p>

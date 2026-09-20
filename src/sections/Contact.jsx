@@ -111,7 +111,7 @@ function Contact() {
           </span>
           <h2 className="animation-delay-100 mt-4 mb-6 animate-fade-in text-4xl font-bold text-secondary-foreground md:text-5xl">
             Let's build{" "}
-            <span className="font-serif font-normal text-white italic">
+            <span className="font-serif font-normal text-foreground italic">
               something great.
             </span>
           </h2>

@@ -18,10 +18,10 @@
 
   --color-border: #242b32;
 
-  --radius: 0.75rem;
-
   --color-highlight: #f5a623;
   --color-surface: #1a2329;
+
+  --radius: 0.75rem;
 
   /* animations */
   --animate-fade-in: fade-in 0.6s ease-out both;
