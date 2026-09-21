@@ -5,14 +5,7 @@ const eduExp = [
     institution: "",
     description:
       "Working on personal and freelance projects, improving my skills and gaining more experience.",
-    technologies: [
-      "React",
-      "Angular",
-      "NextJS",
-      "MongoDB",
-      "Express",
-      "NodeJS",
-    ],
+    technologies: ["MERN", "MEAN", "NextJS", "TailwindCSS"],
     current: true,
   },
   {

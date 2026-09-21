@@ -76,6 +76,7 @@ function Projects() {
                   <a
                     href={project.link}
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="rounded-full glass p-3 transition-all hover:bg-primary hover:text-primary-foreground"
                   >
                     <ArrowUpRight className="h-5 w-5" />
@@ -90,6 +91,7 @@ function Projects() {
                       });
                     }}
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="rounded-full glass p-3 transition-all hover:bg-primary hover:text-primary-foreground"
                   >
                     <FaGithubAlt className="h-5 w-5" />

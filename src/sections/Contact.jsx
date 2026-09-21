@@ -22,13 +22,13 @@ const contactInfo = [
     icon: Phone,
     label: "Phone",
     value: "+91 9496437283",
-    href: "rel:+919496437283",
+    href: "tel:+919496437283",
   },
   {
     icon: MapPin,
     label: "Location",
     value: "Kochi, Kerala",
-    href: "#",
+    href: "https://www.google.com/maps/search/?api=1&query=Kochi%2C%20Kerala",
   },
 ];
 
@@ -227,6 +227,12 @@ function Contact() {
                 <a
                   key={i}
                   href={item.href}
+                  target={item.label === "Location" ? "_blank" : undefined}
+                  rel={
+                    item.label === "Location"
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
                   className="group flex items-center gap-4 rounded-xl p-4 transition-colors hover:bg-surface"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/20">

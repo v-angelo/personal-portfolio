@@ -1,4 +1,5 @@
 import AnimatedButton from "@/components/AnimatedButton";
+import Avatar from "@/components/Avatar";
 import { Button } from "@/components/Button";
 import { ArrowRight, ChevronDown, Download } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
@@ -129,11 +130,7 @@ function Hero() {
               <div className="absolute inset-0 animate-pulse rounded-3xl bg-linear-to-br from-primary/30 via-transparent to-primary/10 blur-2xl" />
 
               <div className="relative rounded-3xl glass p-2 glow-border">
-                <img
-                  src="/images/avatar/webDev-teal.png"
-                  alt="Avatar"
-                  className="aspect-4/5 w-full rounded-2xl object-cover"
-                />
+                <Avatar className="aspect-4/5 object-cover text-background" />
 
                 {/* floating badge */}
                 <div className="absolute -right-5 -bottom-7 animate-float rounded-xl glass px-4 py-3">
