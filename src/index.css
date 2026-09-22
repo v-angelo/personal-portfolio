@@ -1,25 +1,214 @@
 @import "tailwindcss";
 
+:root {
+  --background: #0f1418;
+  --foreground: #f0f2f5;
+
+  --card: #141a1f;
+
+  --primary: #20b2a6;
+  --primary-foreground: #ffffff;
+
+  --secondary: #1f2830;
+  --secondary-foreground: #20b2a6;
+
+  --muted: #252e37;
+  --muted-foreground: #7a8491;
+
+  --border: #242b32;
+
+  --highlight: #f5a623;
+  --surface: #1a2329;
+}
+
+[data-theme="ocean"] {
+  --background: #0c1219;
+  --foreground: #e8eef5;
+
+  --card: #131b25;
+
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+
+  --secondary: #1a2433;
+  --secondary-foreground: #3b82f6;
+
+  --muted: #1e2a3a;
+  --muted-foreground: #7a8fa6;
+
+  --border: #1f2c3d;
+
+  --highlight: #22d3ee;
+  --surface: #16202c;
+}
+
+[data-theme="violet"] {
+  --background: #110f18;
+  --foreground: #f1eef7;
+
+  --card: #1a1724;
+
+  --primary: #a78bfa;
+  --primary-foreground: #ffffff;
+
+  --secondary: #221e30;
+  --secondary-foreground: #a78bfa;
+
+  --muted: #2a2438;
+  --muted-foreground: #8b7fa6;
+
+  --border: #2c2640;
+
+  --highlight: #f472b6;
+  --surface: #1e1a2a;
+}
+
+[data-theme="emerald"] {
+  --background: #0c1411;
+  --foreground: #e8f5ef;
+
+  --card: #121c18;
+
+  --primary: #10b981;
+  --primary-foreground: #ffffff;
+
+  --secondary: #182620;
+  --secondary-foreground: #10b981;
+
+  --muted: #1e3028;
+  --muted-foreground: #6b8f7e;
+
+  --border: #22352c;
+
+  --highlight: #fbbf24;
+  --surface: #16241e;
+}
+
+[data-theme="amber"] {
+  --background: #16120f;
+  --foreground: #f5f0eb;
+
+  --card: #1f1a16;
+
+  --primary: #f97316;
+  --primary-foreground: #ffffff;
+
+  --secondary: #2a221c;
+  --secondary-foreground: #f97316;
+
+  --muted: #332a22;
+  --muted-foreground: #a68b7a;
+
+  --border: #3a2f26;
+
+  --highlight: #fb7185;
+  --surface: #241e19;
+}
+
+[data-theme="oled"] {
+  --background: #000000;
+  --foreground: #ffffff;
+
+  --card: #0a0a0a;
+
+  --primary: #ffffff;
+  --primary-foreground: #000000;
+
+  --secondary: #141414;
+  --secondary-foreground: #ffffff;
+
+  --muted: #1a1a1a;
+  --muted-foreground: #888888;
+
+  --border: #222222;
+
+  --highlight: #e5e5e5;
+  --surface: #0f0f0f;
+}
+
+[data-theme="crimson"] {
+  --background: #0f0a0a;
+  --foreground: #f5ebeb;
+
+  --card: #1a1212;
+
+  --primary: #ef4444;
+  --primary-foreground: #ffffff;
+
+  --secondary: #241818;
+  --secondary-foreground: #ef4444;
+
+  --muted: #2e1e1e;
+  --muted-foreground: #a67a7a;
+
+  --border: #3a2424;
+
+  --highlight: #f87171;
+  --surface: #1e1414;
+}
+
+[data-theme="gold"] {
+  --background: #100e0a;
+  --foreground: #f7f1e3;
+
+  --card: #1a1610;
+
+  --primary: #eab308;
+  --primary-foreground: #1a1408;
+
+  --secondary: #241e14;
+  --secondary-foreground: #eab308;
+
+  --muted: #2e261a;
+  --muted-foreground: #a68f5e;
+
+  --border: #3a3020;
+
+  --highlight: #f59e0b;
+  --surface: #1e1a12;
+}
+
+[data-theme="cyberpunk"] {
+  --background: #0a0710;
+  --foreground: #fce7f3;
+
+  --card: #120b1a;
+
+  --primary: #ff2d95;
+  --primary-foreground: #ffffff;
+
+  --secondary: #1e1228;
+  --secondary-foreground: #ff2d95;
+
+  --muted: #2a1838;
+  --muted-foreground: #c084a8;
+
+  --border: #3b2048;
+
+  --highlight: #f0abfc;
+  --surface: #160e20;
+}
+
 @theme {
   /* colors */
-  --color-background: #0f1418;
-  --color-foreground: #f0f2f5;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
 
-  --color-card: #141a1f;
+  --color-card: var(--card);
 
-  --color-primary: #20b2a6;
-  --color-primary-foreground: #ffffff;
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
 
-  --color-secondary: #1f2830;
-  --color-secondary-foreground: #20b2a6;
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
 
-  --color-muted: #252e37;
-  --color-muted-foreground: #7a8491;
+  --color-muted: var(---muted);
+  --color-muted-foreground: var(--muted-foreground);
 
-  --color-border: #242b32;
+  --color-border: var(--border);
 
-  --color-highlight: #f5a623;
-  --color-surface: #1a2329;
+  --color-highlight: var(--highlight);
+  --color-surface: var(--surface);
 
   --radius: 0.75rem;
 

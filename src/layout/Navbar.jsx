@@ -1,5 +1,6 @@
 import { Button } from "@/components/Button";
 import Logo from "@/components/Logo";
+import ThemeSelector from "@/components/ThemeSelector";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -60,7 +61,9 @@ function Navbar() {
         </div>
 
         {/* cta button */}
-        <div className="hidden md:block">
+        <div className="hidden md:flex md:items-center md:justify-center md:gap-2">
+          <ThemeSelector />
+
           <Button
             onClick={() => {
               document.getElementById("contact")?.scrollIntoView();
