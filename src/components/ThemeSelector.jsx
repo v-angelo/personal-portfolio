@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 const themes = [
+  { value: "teal", color: "#20b2a6" },
   { value: "ocean", color: "#3b82f6" },
   { value: "violet", color: "#a78bfa" },
   { value: "emerald", color: "#10b981" },
@@ -14,6 +15,15 @@ const themes = [
 function ThemeSelector() {
   const [open, setOpen] = useState(false);
   const containerRef = useRef();
+
+  const [currentTheme, setCurrentTheme] = useState("teal");
+
+  const changeTheme = (newTheme) => {
+    setCurrentTheme(newTheme);
+    document.documentElement.dataset.theme = newTheme;
+
+    setOpen(false);
+  };
 
   useEffect(() => {
     function handleClickOutside(e) {
@@ -40,19 +50,20 @@ function ThemeSelector() {
       {open && (
         <ul
           role="listbox"
-          className="absolute top-12 z-10 grid w-full min-w-40 animate-fade-in grid-cols-4 rounded-xl glass border p-1"
+          className="absolute top-12 z-10 grid w-full min-w-20 animate-fade-in grid-cols-2 rounded-xl glass border p-1 md:min-w-40 md:grid-cols-4"
         >
-          {themes.map((theme) => (
-            <li
-              key={theme.value}
-              role="option"
-              onClick={() => {
-                setOpen(false);
-              }}
-              className={`m-1 h-6 w-6 cursor-pointer rounded-full`}
-              style={{ backgroundColor: `${theme.color}` }}
-            ></li>
-          ))}
+          {themes.map(
+            (theme) =>
+              theme.value !== currentTheme && (
+                <li
+                  key={theme.value}
+                  role="option"
+                  onClick={() => changeTheme(theme.value)}
+                  className={`m-1 h-6 w-6 cursor-pointer rounded-full`}
+                  style={{ backgroundColor: `${theme.color}`, opacity: "80%" }}
+                ></li>
+              ),
+          )}
         </ul>
       )}
     </div>

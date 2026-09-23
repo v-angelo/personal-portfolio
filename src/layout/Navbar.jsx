@@ -75,12 +75,16 @@ function Navbar() {
         </div>
 
         {/* mobile menu button */}
-        <button
-          onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-          className="cursor-pointer p-2 text-foreground md:hidden"
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center justify-center gap-1 md:hidden">
+          <ThemeSelector />
+
+          <button
+            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+            className="cursor-pointer p-2 text-foreground"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </nav>
 
       {/* mobile menu */}

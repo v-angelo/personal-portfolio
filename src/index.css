@@ -202,7 +202,7 @@
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
 
-  --color-muted: var(---muted);
+  --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
 
   --color-border: var(--border);
@@ -229,6 +229,15 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: "Inter", sans-serif;
+  }
+
+  * {
+    transition:
+      background-color 500ms ease,
+      color 500ms ease,
+      border-color 500ms ease,
+      fill 500ms ease,
+      stroke 500ms ease;
   }
 
   button {
@@ -362,8 +371,9 @@
   }
 
   .animated-border:hover {
-    background-color: color-mix(in srgb, #26c4b8 15%, transparent);
+    background-color: color-mix(in srgb, var(--color-primary) 15%, transparent);
     backdrop-filter: blur(16px);
-    box-shadow: 0 0 20px color-mix(in srgb, #26c4b8 20%, transparent);
+    box-shadow: 0 0 20px
+      color-mix(in srgb, var(--color-primary) 20%, transparent);
   }
 }
