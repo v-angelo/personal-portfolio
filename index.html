@@ -10,6 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VA | Web Developer</title>
   </head>
+
+  <script>
+    const theme = localStorage.getItem("VA-theme") || "violet";
+    document.documentElement.dataset.theme = theme;
+  </script>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>

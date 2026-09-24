@@ -1,24 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0f1418;
-  --foreground: #f0f2f5;
+  --background: #110f18;
+  --foreground: #f1eef7;
 
-  --card: #141a1f;
+  --card: #1a1724;
 
-  --primary: #20b2a6;
+  --primary: #a78bfa;
   --primary-foreground: #ffffff;
 
-  --secondary: #1f2830;
-  --secondary-foreground: #20b2a6;
+  --secondary: #221e30;
+  --secondary-foreground: #a78bfa;
 
-  --muted: #252e37;
-  --muted-foreground: #7a8491;
+  --muted: #2a2438;
+  --muted-foreground: #8b7fa6;
 
-  --border: #242b32;
+  --border: #2c2640;
 
-  --highlight: #f5a623;
-  --surface: #1a2329;
+  --highlight: #f472b6;
+  --surface: #1e1a2a;
 }
 
 [data-theme="ocean"] {
@@ -42,25 +42,25 @@
   --surface: #16202c;
 }
 
-[data-theme="violet"] {
-  --background: #110f18;
-  --foreground: #f1eef7;
+[data-theme="teal"] {
+  --background: #0f1418;
+  --foreground: #f0f2f5;
 
-  --card: #1a1724;
+  --card: #141a1f;
 
-  --primary: #a78bfa;
+  --primary: #20b2a6;
   --primary-foreground: #ffffff;
 
-  --secondary: #221e30;
-  --secondary-foreground: #a78bfa;
+  --secondary: #1f2830;
+  --secondary-foreground: #20b2a6;
 
-  --muted: #2a2438;
-  --muted-foreground: #8b7fa6;
+  --muted: #252e37;
+  --muted-foreground: #7a8491;
 
-  --border: #2c2640;
+  --border: #242b32;
 
-  --highlight: #f472b6;
-  --surface: #1e1a2a;
+  --highlight: #f5a623;
+  --surface: #1a2329;
 }
 
 [data-theme="emerald"] {
@@ -246,6 +246,12 @@
 
   .font-serif {
     font-family: "Playfair Display", serif;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
   }
 }
 

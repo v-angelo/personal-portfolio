@@ -1,5 +1,6 @@
 import AnimatedButton from "@/components/AnimatedButton";
 import Avatar from "@/components/Avatar";
+import BgSelector from "@/components/BgSelector";
 import { Button } from "@/components/Button";
 import { ArrowRight, ChevronDown, Download } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
@@ -32,15 +33,7 @@ function Hero() {
   return (
     <section className="relative flex items-center overflow-hidden max-2xl:min-h-screen">
       {/* bg */}
-      <div className="absolute inset-0">
-        <img
-          src="/images/bg/bg-teal.jpg"
-          alt="Hero Image"
-          className="h-full w-full object-cover opacity-40"
-        />
-
-        <div className="absolute inset-0 bg-linear-to-b from-background/20 via-background/80 to-background" />
-      </div>
+      <BgSelector />
 
       {/* dots */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">

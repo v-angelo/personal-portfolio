@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 
 const themes = [
-  { value: "teal", color: "#20b2a6" },
-  { value: "ocean", color: "#3b82f6" },
   { value: "violet", color: "#a78bfa" },
+  { value: "ocean", color: "#3b82f6" },
+  { value: "teal", color: "#20b2a6" },
   { value: "emerald", color: "#10b981" },
   { value: "amber", color: "#f97316" },
   { value: "oled", color: "#ffffff" },
@@ -16,11 +16,15 @@ function ThemeSelector() {
   const [open, setOpen] = useState(false);
   const containerRef = useRef();
 
-  const [currentTheme, setCurrentTheme] = useState("teal");
+  const [currentTheme, setCurrentTheme] = useState(
+    () => document.documentElement.dataset.theme || "violet",
+  );
 
   const changeTheme = (newTheme) => {
     setCurrentTheme(newTheme);
     document.documentElement.dataset.theme = newTheme;
+
+    localStorage.setItem("VA-theme", newTheme);
 
     setOpen(false);
   };
@@ -32,6 +36,7 @@ function ThemeSelector() {
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
+
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
