@@ -24,6 +24,25 @@ const projects = [
       "https://github.com/v-angelo/memoir-server",
     ],
   },
+  {
+    title: "WalletWatch",
+    description:
+      "A personalized finanace management app built using Angular frontend and Node/Typescript backend",
+    image: "/projects/project03.jpg",
+    tags: [
+      "MongoDB",
+      "Express",
+      "Angular",
+      "Node",
+      "Typescript",
+      "TailwindCSS",
+    ],
+    link: "https://walletwatch.vercel.app",
+    github: [
+      "https://github.com/v-angelo/wallet-watch",
+      "https://github.com/v-angelo/wallet-watch-server",
+    ],
+  },
 ];
 
 function Projects() {
