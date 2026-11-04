@@ -6,7 +6,7 @@ const projects = [
   {
     title: "Nimbus Core",
     description:
-      "A weather app built using React and Openweather API featuring around the world location search, forecasts and custom weather themes features.",
+      "A weather app built using React and Openweather API featuring around the world location search, forecasts and custom weather theme features.",
     image: "/projects/project01.jpg",
     tags: ["React", "TailwindCSS", "OpenweatherAPI"],
     link: "https://nimbus-core.vercel.app",
@@ -17,7 +17,7 @@ const projects = [
     description:
       "A diary app built using MERN Stack technologies with personalized themes and complete journaling features plus server-side encryption.",
     image: "/projects/project02.jpg",
-    tags: ["MongoDB", "Express", "React", "NodeJS", "TailwindCSS"],
+    tags: ["MongoDB", "Express", "React", "Node", "Javascript", "TailwindCSS"],
     link: "https://memoir-diary-app.vercel.app",
     github: [
       "https://github.com/v-angelo/memoir-diary-app",
@@ -27,7 +27,7 @@ const projects = [
   {
     title: "WalletWatch",
     description:
-      "A personalized finanace management app built using Angular frontend and Node/Typescript backend",
+      "A personalized finance management app built using MEAN Stack technologies (Angular frontend and Node/Typescript backend).",
     image: "/projects/project03.jpg",
     tags: [
       "MongoDB",
@@ -37,7 +37,7 @@ const projects = [
       "Typescript",
       "TailwindCSS",
     ],
-    link: "https://walletwatch.vercel.app",
+    link: "https://wallet-watch-app.vercel.app",
     github: [
       "https://github.com/v-angelo/wallet-watch",
       "https://github.com/v-angelo/wallet-watch-server",
@@ -120,12 +120,18 @@ function Projects() {
 
               {/* Content */}
               <div className="space-y-4 p-6">
-                <div className="flex items-start justify-between">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start justify-between"
+                >
                   <h3 className="text-xl font-semibold transition-colors group-hover:text-primary">
                     {project.title}
                   </h3>
                   <ArrowUpRight className="h-5 w-5 text-muted-foreground transition-all group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-primary" />
-                </div>
+                </a>
+
                 <p className="text-sm text-muted-foreground">
                   {project.description}
                 </p>
@@ -146,10 +152,22 @@ function Projects() {
 
         {/* view all cta */}
         <div className="animation-delay-500 mt-12 animate-fade-in text-center">
-          <AnimatedButton>
-            View All Projects
-            <ArrowUpRight className="h-5 w-5" />
-          </AnimatedButton>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => {
+              e.preventDefault();
+
+              projects.forEach((project) => {
+                window.open(project.link, "_blank");
+              });
+            }}
+          >
+            <AnimatedButton>
+              View All Projects
+              <ArrowUpRight className="h-5 w-5" />
+            </AnimatedButton>
+          </a>
         </div>
       </div>
     </section>
