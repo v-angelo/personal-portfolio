@@ -56,7 +56,7 @@ function Contact() {
       const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-      console.log(serviceId, templateId, publicKey);
+      // console.log(serviceId, templateId, publicKey);
 
       if (!serviceId || !templateId || !publicKey) {
         throw new Error(
