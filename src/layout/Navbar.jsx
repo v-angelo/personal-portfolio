@@ -2,7 +2,7 @@ import { Button } from "@/components/Button";
 import Logo from "@/components/Logo";
 import ThemeSelector from "@/components/ThemeSelector";
 import { Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -16,6 +16,8 @@ function Navbar() {
 
   const [isScrolled, setIsScrolled] = useState(false);
 
+  const navbarRef = useRef(null);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -26,8 +28,31 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navbarRef.current && !navbarRef.current.contains(event.target)) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
+
   return (
     <header
+      ref={navbarRef}
       className={`fixed top-0 right-0 left-0 z-50 transition-all duration-500 ${isScrolled ? "glass-strong py-3" : "bg-transparent py-5"}`}
     >
       <nav className="container mx-auto flex items-center justify-between px-6 pb-2 md:pb-0">

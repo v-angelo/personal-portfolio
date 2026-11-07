@@ -77,7 +77,7 @@ function Hero() {
               </h1>
 
               <p className="animation-delay-200 max-w-lg animate-fade-in text-lg text-muted-foreground">
-                Hi, I'm Visal Angelo — a Full-Stack Developer focused on
+                Hi, I'm Visal Angelo — a Full Stack Developer focused on
                 building modern web applications with clean code, thoughtful
                 design, and seamless user experiences.
               </p>
@@ -94,10 +94,16 @@ function Hero() {
                 Contact Me <ArrowRight className="h-5 w-5" />
               </Button>
 
-              <AnimatedButton>
-                <Download className="h-5 w-5" />
-                Download CV
-              </AnimatedButton>
+              <a
+                href="/resume/v-angelo-resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <AnimatedButton>
+                  <Download className="h-5 w-5" />
+                  Download Resume
+                </AnimatedButton>
+              </a>
             </div>
 
             {/* social links */}
